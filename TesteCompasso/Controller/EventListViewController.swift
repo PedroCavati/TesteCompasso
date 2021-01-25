@@ -31,15 +31,6 @@ class EventListViewController: UIViewController {
         fetch()
     }
     
-    override func loadView() {
-        let eventListView = EventListView(frame: UIScreen.main.bounds)
-        
-        eventListView.eventTableView.delegate = self
-        eventListView.eventTableView.dataSource = self
-        
-        self.view = eventListView
-    }
-    
 }
 
 extension EventListViewController: UITableViewDelegate, UITableViewDataSource {

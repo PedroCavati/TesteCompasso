@@ -46,5 +46,5 @@ extension EventListView: ViewCodable {
             eventTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])
     }
-    
+    ww
 }
