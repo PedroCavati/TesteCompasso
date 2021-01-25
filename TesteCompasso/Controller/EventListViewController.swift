@@ -14,7 +14,15 @@ class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        fetch()
+    }
+    
+    func fetch() {
+        EventService.shared.fetchEvents { (events, err) in
+            if let events = events {
+                print(events[1])
+            }
+        }
     }
     
     override func loadView() {

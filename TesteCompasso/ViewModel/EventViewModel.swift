@@ -14,6 +14,6 @@ struct EventViewModel {
     
     init(event: Event) {
         self.title = event.title
-        self.id = event.id
+        self.id = Int(event.id) ?? <#default value#>
     }
 }
