@@ -27,17 +27,8 @@ class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupNavigationController()
         fetch()
-    }
-    
-    func fetch() {
-        eventService.fetchEvents { [weak self] (events, err) in
-            guard  let strongSelf = self else { return }
-            if let events = events {
-                strongSelf.eventViewModels = events.map({return EventViewModel(event: $0)})
-                strongSelf.eventListView.eventTableView.reloadData()
-            }
-        }
     }
     
     override func loadView() {
@@ -64,4 +55,21 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
         
+}
+
+extension EventListViewController {
+    func fetch() {
+        eventService.fetchEvents { [weak self] (events, err) in
+            guard  let strongSelf = self else { return }
+            if let events = events {
+                strongSelf.eventViewModels = events.map({return EventViewModel(event: $0)})
+                strongSelf.eventListView.eventTableView.reloadData()
+            }
+        }
+    }
+    
+    func setupNavigationController() {
+        navigationItem.title = "Eventos"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
 }

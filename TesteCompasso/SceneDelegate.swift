@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let eventService = EventService.shared
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = EventListViewController(eventService: eventService)
+        window.rootViewController = UINavigationController(rootViewController: EventListViewController(eventService: eventService))
         self.window = window
         window.makeKeyAndVisible()
     }
