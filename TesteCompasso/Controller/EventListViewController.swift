@@ -12,7 +12,18 @@ class EventListViewController: UIViewController {
     var eventViewModels = [EventViewModel]()
     
     var eventListView: EventListView { return self.view as! EventListView }
-
+    
+    var eventService: EventService
+    
+    init(eventService: EventService) {
+        self.eventService = eventService
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,7 +31,7 @@ class EventListViewController: UIViewController {
     }
     
     func fetch() {
-        EventService.shared.fetchEvents { [weak self] (events, err) in
+        eventService.fetchEvents { [weak self] (events, err) in
             guard  let strongSelf = self else { return }
             if let events = events {
                 strongSelf.eventViewModels = events.map({return EventViewModel(event: $0)})
