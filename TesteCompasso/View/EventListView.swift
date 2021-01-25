@@ -47,5 +47,4 @@ extension EventListView: ViewCodable {
         ])
     }
     
-    
 }
