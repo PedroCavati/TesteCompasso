@@ -10,6 +10,8 @@ import UIKit
 class EventListViewController: UIViewController {
     
     var eventViewModels = [EventViewModel]()
+    
+    var eventListView: EventListView { return self.view as! EventListView }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +20,11 @@ class EventListViewController: UIViewController {
     }
     
     func fetch() {
-        EventService.shared.fetchEvents { (events, err) in
+        EventService.shared.fetchEvents { [weak self] (events, err) in
+            guard  let strongSelf = self else { return }
             if let events = events {
-                print(events[1])
+                strongSelf.eventViewModels = events.map({return EventViewModel(event: $0)})
+                strongSelf.eventListView.eventTableView.reloadData()
             }
         }
     }
@@ -28,7 +32,8 @@ class EventListViewController: UIViewController {
     override func loadView() {
         let eventListView = EventListView(frame: UIScreen.main.bounds)
         
-        eventListView.setEventTableView(delegate: self, datasource: self)
+        eventListView.eventTableView.delegate = self
+        eventListView.eventTableView.dataSource = self
         
         self.view = eventListView
     }
@@ -42,7 +47,10 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventListViewCell
+        let eventViewModel = eventViewModels[indexPath.row]
+        cell.eventViewModel = eventViewModel
+        return cell
     }
         
 }

@@ -10,9 +10,11 @@ import UIKit
 
 class EventListViewCell: UITableViewCell {
     
-    var eventModel: EventViewModel! {
+    var eventViewModel: EventViewModel! {
         didSet {
-            
+            self.titleLabel.text = eventViewModel.title
+            self.dateLabel.text = "29/06/2000"
+            self.accessoryType = .disclosureIndicator
         }
     }
     
@@ -20,21 +22,22 @@ class EventListViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.text = ""
         return label
     }()
     
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 10, weight: .thin)
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.backgroundColor = .white
+        self.setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -51,16 +54,17 @@ extension EventListViewCell: ViewCodable {
     }
     
     func setupConstraints() {
-        let margin = self.layoutMarginsGuide
+        let margins = self.layoutMarginsGuide
         
         NSLayoutConstraint.activate([
-            self.titleLabel.topAnchor.constraint(equalTo: margin.topAnchor, constant: 10),
-            self.titleLabel.trailingAnchor.constraint(equalTo: self.accessoryView?.leadingAnchor ?? margin.trailingAnchor, constant: -10),
-            self.titleLabel.leadingAnchor.constraint(equalTo: margin.leadingAnchor, constant: 10),
+            self.titleLabel.topAnchor.constraint(equalTo: margins.topAnchor),
+            self.titleLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+            self.titleLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+            self.titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.dateLabel.topAnchor),
             
-            self.dateLabel.leadingAnchor.constraint(equalTo: margin.leadingAnchor, constant: 10),
-            self.dateLabel.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -10),
-            self.dateLabel.trailingAnchor.constraint(equalTo: self.accessoryView?.leadingAnchor ?? margin.trailingAnchor, constant: -50)
+            self.dateLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+            self.dateLabel.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
+            self.dateLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
         ])
     }
     

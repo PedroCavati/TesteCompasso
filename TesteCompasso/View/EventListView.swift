@@ -10,11 +10,12 @@ import UIKit
 
 class EventListView: UIView {
     
-    private lazy var eventTableView: UITableView = {
+    lazy var eventTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(EventListViewCell.self, forCellReuseIdentifier: "EventCell")
-        tableView.backgroundColor = .systemGray
+        tableView.register(EventListViewCell.self, forCellReuseIdentifier: "eventCell")
+        tableView.backgroundColor = .systemBackground
+        tableView.allowsSelection = false
         return tableView
     }()
     
@@ -28,14 +29,6 @@ class EventListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-// MARK:- Setters
-extension EventListView {
-    func setEventTableView(delegate: UITableViewDelegate, datasource: UITableViewDataSource) {
-        self.eventTableView.delegate = delegate
-        self.eventTableView.dataSource = datasource
-    }
 }
 
 // MARK:- ViewCodable
