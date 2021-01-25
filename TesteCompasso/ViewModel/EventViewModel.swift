@@ -10,10 +10,10 @@ import UIKit
 
 struct EventViewModel {
     let title: String
-    let id: Int
+    let id: String
     
     init(event: Event) {
         self.title = event.title
-        self.id = Int(event.id) ?? <#default value#>
+        self.id = event.id
     }
 }

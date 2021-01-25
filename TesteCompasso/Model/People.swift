@@ -8,7 +8,7 @@
 import Foundation
 
 struct People: Codable {
-    let eventId: Int
+    let eventId: String
     let name: String
     let email: String
 }
