@@ -13,7 +13,7 @@ class EventListViewCell: UITableViewCell {
     var eventViewModel: EventViewModel! {
         didSet {
             self.titleLabel.text = eventViewModel.title
-            self.dateLabel.text = "29/06/2000"
+            self.dateLabel.text = eventViewModel.date
             self.accessoryType = .disclosureIndicator
         }
     }

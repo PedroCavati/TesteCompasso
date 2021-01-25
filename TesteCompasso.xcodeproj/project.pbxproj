@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E945922625BF557100A8288F /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945922525BF557100A8288F /* EventDetail.swift */; };
 		E980A53725BCC456006FC8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53625BCC456006FC8A0 /* AppDelegate.swift */; };
 		E980A53925BCC456006FC8A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53825BCC456006FC8A0 /* SceneDelegate.swift */; };
 		E980A53B25BCC456006FC8A0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53A25BCC456006FC8A0 /* EventListViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E945922525BF557100A8288F /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
 		E980A53325BCC455006FC8A0 /* TesteCompasso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteCompasso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E980A53625BCC456006FC8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E980A53825BCC456006FC8A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				E980A57325BCCEF5006FC8A0 /* Event.swift */,
 				E980A57825BCCF42006FC8A0 /* People.swift */,
+				E945922525BF557100A8288F /* EventDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				E980A53725BCC456006FC8A0 /* AppDelegate.swift in Sources */,
 				E9975AE525BDC79F00F78BB7 /* EventViewModel.swift in Sources */,
 				E9F14A7425BD4979006BC4CD /* DetailView.swift in Sources */,
+				E945922625BF557100A8288F /* EventDetail.swift in Sources */,
 				E980A53925BCC456006FC8A0 /* SceneDelegate.swift in Sources */,
 				E980A57925BCCF42006FC8A0 /* People.swift in Sources */,
 				E980A57E25BCD1A4006FC8A0 /* ViewCodable.swift in Sources */,
