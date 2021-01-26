@@ -10,13 +10,13 @@ import UIKit
 class EventListViewController: UIViewController {
     
     /// View's responsible for the content to be rendered inside this ViewController
-    var eventListView: EventListView { return self.view as! EventListView }
+    private var eventListView: EventListView { return self.view as! EventListView }
     
     /// EventService that'll allow you to fetch events
-    var eventService: EventService
+    private var eventService: EventService
     
     /// EventViewModels to be displayed in the tableView
-    var eventViewModels = [EventViewModel]()
+    private var eventViewModels = [EventViewModel]()
     
     /// View's Coordinator
     weak var coordinator: MainCoordinator?
@@ -30,7 +30,16 @@ class EventListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func loadView() {
+        let eventListView = EventListView(frame: UIScreen.main.bounds)
+                
+        eventListView.eventTableView.delegate = self
+        eventListView.eventTableView.dataSource = self
+                
+        self.view = eventListView
+    }
+    
+    override func viewDidLoad() {
         setupNavigationController()
         fetch()
     }
@@ -49,6 +58,11 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.eventViewModel = eventViewModel
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.coordinator?.showEventDetail(for: self.eventViewModels[indexPath.row].id)
+    }
         
 }
 
@@ -65,6 +79,5 @@ extension EventListViewController {
     
     func setupNavigationController() {
         navigationItem.title = "Eventos"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

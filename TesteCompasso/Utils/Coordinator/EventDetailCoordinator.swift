@@ -24,17 +24,15 @@ class EventDetailCoordinator: Coordinator {
     }
     
     func start() {
-        /*
-         let vc = EventDetailViewController()
-         vc.title = "EventDetailViewController"
-         vc.coordinator = self
-         navigationController.pushViewController(vc, animated: true)
-         */
+        let vc = EventDetailViewController(with: eventService, for: eventId)
+        vc.title = "EventDetailViewController"
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
     
-//    func didGetDismissed() {
-//        parentCoordinator?.childDidFinish(self)
-//    }
+    //    func didGetDismissed() {
+    //        parentCoordinator?.childDidFinish(self)
+    //    }
     
     
 }

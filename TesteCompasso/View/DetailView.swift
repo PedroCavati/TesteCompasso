@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import UIKit
+
+class DetailView: UIView {
+    
+    var eventViewModel: EventViewModel! {
+        didSet {
+            
+        }
+    }
+    
+    
+    
+}

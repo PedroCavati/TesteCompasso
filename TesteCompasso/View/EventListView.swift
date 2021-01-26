@@ -15,7 +15,6 @@ class EventListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(EventListViewCell.self, forCellReuseIdentifier: "eventCell")
         tableView.backgroundColor = .systemBackground
-        tableView.allowsSelection = false
         return tableView
     }()
     
