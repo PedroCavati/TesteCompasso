@@ -22,7 +22,7 @@ class EventListViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 16, weight: .regular)
         label.text = ""
         return label
     }()
@@ -31,7 +31,7 @@ class EventListViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 10, weight: .thin)
+        label.font = .systemFont(ofSize: 12, weight: .thin)
         return label
     }()
     
@@ -60,7 +60,7 @@ extension EventListViewCell: ViewCodable {
             self.titleLabel.topAnchor.constraint(equalTo: margins.topAnchor),
             self.titleLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
             self.titleLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
-            self.titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.dateLabel.topAnchor),
+            self.titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.dateLabel.topAnchor, constant: -5),
             
             self.dateLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
             self.dateLabel.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
