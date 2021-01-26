@@ -34,6 +34,8 @@ class EventDetailViewController: UIViewController {
     override func loadView() {
         let detailView = DetailView(frame: UIScreen.main.bounds)
         
+        detailView.eventViewModel = self.eventViewModel
+        
         self.view = detailView
     }
     

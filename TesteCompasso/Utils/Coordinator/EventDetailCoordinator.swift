@@ -26,7 +26,7 @@ class EventDetailCoordinator: Coordinator {
     func start() {
         let vc = EventDetailViewController(with: eventService, for: eventId)
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        navigationController.pushViewController(vc, animated: true)
     }
     
 }
