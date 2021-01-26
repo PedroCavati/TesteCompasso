@@ -13,7 +13,11 @@ class EventDetailViewController: UIViewController {
     
     private var eventId: String
     
-    private var eventModel: EventViewModel?
+    private var eventViewModel: EventViewModel? {
+        didSet {
+            self.setupNavigationController()
+        }
+    }
     
     weak var coordinator: EventDetailCoordinator?
     
@@ -30,8 +34,23 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        fetch()
     }
     
+}
 
+extension EventDetailViewController {
+    
+    func fetch() {
+        eventService.fetchEventDetail(for: self.eventId) { [weak self] (eventDetail, err) in
+            guard let strongSelf = self else { return }
+            if let eventDetail = eventDetail {
+                strongSelf.eventViewModel = EventViewModel(event: eventDetail)
+            }
+        }
+    }
+    
+    func setupNavigationController() {
+        navigationItem.title = self.eventViewModel?.title
+    }
 }

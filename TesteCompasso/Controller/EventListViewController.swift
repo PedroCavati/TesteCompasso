@@ -40,8 +40,8 @@ class EventListViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        setupNavigationController()
         fetch()
+        setupNavigationController()
     }
     
 }
@@ -69,7 +69,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
 extension EventListViewController {
     func fetch() {
         eventService.fetchEvents { [weak self] (events, err) in
-            guard  let strongSelf = self else { return }
+            guard let strongSelf = self else { return }
             if let events = events {
                 strongSelf.eventViewModels = events.map({return EventViewModel(event: $0)})
                 strongSelf.eventListView.eventTableView.reloadData()
