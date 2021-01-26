@@ -9,8 +9,6 @@ import Foundation
 
 class EventService {
     
-    static let shared = EventService()
-    
     func fetchEvents(completion: @escaping ([Event]?, Error?) -> ()) {
         
         let urlString = "http://5f5a8f24d44d640016169133.mockapi.io/api/events"

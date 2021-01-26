@@ -9,11 +9,17 @@ import UIKit
 
 class EventListViewController: UIViewController {
     
-    var eventViewModels = [EventViewModel]()
-    
+    /// View's responsible for the content to be rendered inside this ViewController
     var eventListView: EventListView { return self.view as! EventListView }
     
+    /// EventService that'll allow you to fetch events
     var eventService: EventService
+    
+    /// EventViewModels to be displayed in the tableView
+    var eventViewModels = [EventViewModel]()
+    
+    /// View's Coordinator
+    weak var coordinator: MainCoordinator?
     
     init(eventService: EventService) {
         self.eventService = eventService
@@ -24,20 +30,9 @@ class EventListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
         setupNavigationController()
         fetch()
-    }
-    
-    override func loadView() {
-        let eventListView = EventListView(frame: UIScreen.main.bounds)
-        
-        eventListView.eventTableView.delegate = self
-        eventListView.eventTableView.dataSource = self
-        
-        self.view = eventListView
     }
     
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E945922625BF557100A8288F /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945922525BF557100A8288F /* EventDetail.swift */; };
+		E945924425BF662F00A8288F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945924325BF662F00A8288F /* Coordinator.swift */; };
+		E945924925BF66C900A8288F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945924825BF66C900A8288F /* MainCoordinator.swift */; };
 		E980A53725BCC456006FC8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53625BCC456006FC8A0 /* AppDelegate.swift */; };
 		E980A53925BCC456006FC8A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53825BCC456006FC8A0 /* SceneDelegate.swift */; };
 		E980A53B25BCC456006FC8A0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53A25BCC456006FC8A0 /* EventListViewController.swift */; };
@@ -19,6 +21,7 @@
 		E980A57925BCCF42006FC8A0 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A57825BCCF42006FC8A0 /* People.swift */; };
 		E980A57E25BCD1A4006FC8A0 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A57D25BCD1A4006FC8A0 /* ViewCodable.swift */; };
 		E9975AE525BDC79F00F78BB7 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9975AE425BDC79F00F78BB7 /* EventViewModel.swift */; };
+		E997C3D825C01E0200604F2A /* EventDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997C3D725C01E0200604F2A /* EventDetailCoordinator.swift */; };
 		E9F14A6525BD4929006BC4CD /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A6425BD4929006BC4CD /* EventService.swift */; };
 		E9F14A6A25BD4937006BC4CD /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A6925BD4937006BC4CD /* EventListView.swift */; };
 		E9F14A6F25BD4961006BC4CD /* EventListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A6E25BD4961006BC4CD /* EventListViewCell.swift */; };
@@ -44,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		E945922525BF557100A8288F /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
+		E945924325BF662F00A8288F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E945924825BF66C900A8288F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E980A53325BCC455006FC8A0 /* TesteCompasso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteCompasso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E980A53625BCC456006FC8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E980A53825BCC456006FC8A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		E980A57825BCCF42006FC8A0 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		E980A57D25BCD1A4006FC8A0 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		E9975AE425BDC79F00F78BB7 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		E997C3D725C01E0200604F2A /* EventDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCoordinator.swift; sourceTree = "<group>"; };
 		E9F14A6425BD4929006BC4CD /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		E9F14A6925BD4937006BC4CD /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		E9F14A6E25BD4961006BC4CD /* EventListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E945923F25BF63F300A8288F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E945924325BF662F00A8288F /* Coordinator.swift */,
+				E945924825BF66C900A8288F /* MainCoordinator.swift */,
+				E997C3D725C01E0200604F2A /* EventDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		E980A52A25BCC455006FC8A0 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +166,7 @@
 		E980A56C25BCC772006FC8A0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E945923F25BF63F300A8288F /* Coordinator */,
 				E980A57D25BCD1A4006FC8A0 /* ViewCodable.swift */,
 				E9F14A6425BD4929006BC4CD /* EventService.swift */,
 			);
@@ -323,7 +340,9 @@
 			files = (
 				E980A57425BCCEF5006FC8A0 /* Event.swift in Sources */,
 				E980A53B25BCC456006FC8A0 /* EventListViewController.swift in Sources */,
+				E945924425BF662F00A8288F /* Coordinator.swift in Sources */,
 				E980A53725BCC456006FC8A0 /* AppDelegate.swift in Sources */,
+				E997C3D825C01E0200604F2A /* EventDetailCoordinator.swift in Sources */,
 				E9975AE525BDC79F00F78BB7 /* EventViewModel.swift in Sources */,
 				E9F14A7425BD4979006BC4CD /* DetailView.swift in Sources */,
 				E945922625BF557100A8288F /* EventDetail.swift in Sources */,
@@ -333,6 +352,7 @@
 				E9F14A6F25BD4961006BC4CD /* EventListViewCell.swift in Sources */,
 				E9F14A6525BD4929006BC4CD /* EventService.swift in Sources */,
 				E9F14A6A25BD4937006BC4CD /* EventListView.swift in Sources */,
+				E945924925BF66C900A8288F /* MainCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
