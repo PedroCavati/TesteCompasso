@@ -10,6 +10,7 @@
 		E945922625BF557100A8288F /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945922525BF557100A8288F /* EventDetail.swift */; };
 		E945924425BF662F00A8288F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945924325BF662F00A8288F /* Coordinator.swift */; };
 		E945924925BF66C900A8288F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945924825BF66C900A8288F /* MainCoordinator.swift */; };
+		E9598C7925C1498C0037CD6D /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9598C7825C1498C0037CD6D /* EventDetailViewModel.swift */; };
 		E980A53725BCC456006FC8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53625BCC456006FC8A0 /* AppDelegate.swift */; };
 		E980A53925BCC456006FC8A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53825BCC456006FC8A0 /* SceneDelegate.swift */; };
 		E980A53B25BCC456006FC8A0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53A25BCC456006FC8A0 /* EventListViewController.swift */; };
@@ -28,7 +29,6 @@
 		E9F14A6F25BD4961006BC4CD /* EventListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A6E25BD4961006BC4CD /* EventListViewCell.swift */; };
 		E9F14A7425BD4979006BC4CD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A7325BD4979006BC4CD /* DetailView.swift */; };
 		E9FF828925C02532002779F4 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF828825C02532002779F4 /* EventDetailViewController.swift */; };
-		E9FF829825C035EF002779F4 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF829725C035EE002779F4 /* InformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +52,7 @@
 		E945922525BF557100A8288F /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
 		E945924325BF662F00A8288F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E945924825BF66C900A8288F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		E9598C7825C1498C0037CD6D /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
 		E980A53325BCC455006FC8A0 /* TesteCompasso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteCompasso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E980A53625BCC456006FC8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E980A53825BCC456006FC8A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		E9F14A6E25BD4961006BC4CD /* EventListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewCell.swift; sourceTree = "<group>"; };
 		E9F14A7325BD4979006BC4CD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E9FF828825C02532002779F4 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
-		E9FF829725C035EE002779F4 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				E9975AE425BDC79F00F78BB7 /* EventViewModel.swift */,
+				E9598C7825C1498C0037CD6D /* EventDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				E9F14A7325BD4979006BC4CD /* DetailView.swift */,
-				E9FF829725C035EE002779F4 /* InformationView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -371,6 +371,7 @@
 				E9BD160625C0B04A00F820C4 /* UIImageView + Extension.swift in Sources */,
 				E9975AE525BDC79F00F78BB7 /* EventViewModel.swift in Sources */,
 				E9F14A7425BD4979006BC4CD /* DetailView.swift in Sources */,
+				E9598C7925C1498C0037CD6D /* EventDetailViewModel.swift in Sources */,
 				E945922625BF557100A8288F /* EventDetail.swift in Sources */,
 				E980A53925BCC456006FC8A0 /* SceneDelegate.swift in Sources */,
 				E980A57925BCCF42006FC8A0 /* People.swift in Sources */,
@@ -378,7 +379,6 @@
 				E9F14A6F25BD4961006BC4CD /* EventListViewCell.swift in Sources */,
 				E9F14A6525BD4929006BC4CD /* EventService.swift in Sources */,
 				E9F14A6A25BD4937006BC4CD /* EventListView.swift in Sources */,
-				E9FF829825C035EF002779F4 /* InformationView.swift in Sources */,
 				E9FF828925C02532002779F4 /* EventDetailViewController.swift in Sources */,
 				E945924925BF66C900A8288F /* MainCoordinator.swift in Sources */,
 			);

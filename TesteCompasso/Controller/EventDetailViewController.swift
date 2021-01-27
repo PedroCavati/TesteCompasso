@@ -13,11 +13,13 @@ class EventDetailViewController: UIViewController {
     
     private var eventId: String
     
-    private var eventViewModel: EventViewModel? {
+    private var eventDetailViewModel: EventDetailViewModel? {
         didSet {
             self.setupNavigationController()
         }
     }
+    
+    private var detailView: DetailView { return self.view as! DetailView}
     
     weak var coordinator: EventDetailCoordinator?
     
@@ -34,8 +36,6 @@ class EventDetailViewController: UIViewController {
     override func loadView() {
         let detailView = DetailView(frame: UIScreen.main.bounds)
         
-        detailView.eventViewModel = self.eventViewModel
-        
         self.view = detailView
     }
     
@@ -43,6 +43,17 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
 
         fetch()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            NSLayoutConstraint.deactivate(detailView.portraitConstraints)
+            NSLayoutConstraint.activate(detailView.landscapeConstraints)
+        } else {
+            NSLayoutConstraint.deactivate(detailView.landscapeConstraints)
+            NSLayoutConstraint.activate(detailView.portraitConstraints)
+        }
+        self.view.layoutIfNeeded()
     }
     
 }
@@ -53,12 +64,13 @@ extension EventDetailViewController {
         eventService.fetchEventDetail(for: self.eventId) { [weak self] (eventDetail, err) in
             guard let strongSelf = self else { return }
             if let eventDetail = eventDetail {
-                strongSelf.eventViewModel = EventViewModel(event: eventDetail)
+                strongSelf.eventDetailViewModel = EventDetailViewModel(event: eventDetail)
+                strongSelf.detailView.eventDetailViewModel = strongSelf.eventDetailViewModel
             }
         }
     }
     
     func setupNavigationController() {
-        navigationItem.title = self.eventViewModel?.title
+        navigationItem.title = self.eventDetailViewModel?.title
     }
 }
