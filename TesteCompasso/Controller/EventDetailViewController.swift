@@ -36,6 +36,8 @@ class EventDetailViewController: UIViewController {
     override func loadView() {
         let detailView = DetailView(frame: UIScreen.main.bounds)
         
+        detailView.showAttendantsListButton.addTarget(self, action: #selector(showAttendants), for: .touchUpInside)
+        
         self.view = detailView
     }
     
@@ -73,4 +75,9 @@ extension EventDetailViewController {
     func setupNavigationController() {
         navigationItem.title = self.eventDetailViewModel?.title
     }
+    
+    @objc func showAttendants() {
+        coordinator?.showAttendantsList(peopleList: eventDetailViewModel?.attendants ?? [])
+    }
+    
 }

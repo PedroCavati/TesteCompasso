@@ -1,5 +1,5 @@
 //
-//  EventListViewCell.swift
+//  EventCell.swift
 //  TesteCompasso
 //
 //  Created by Pedro Henrique Cavalcante de Sousa on 24/01/21.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class EventListViewCell: UITableViewCell {
+class EventList: UITableViewCell {
     
     var eventViewModel: EventViewModel! {
         didSet {
@@ -23,7 +23,6 @@ class EventListViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 16, weight: .regular)
-        label.text = ""
         return label
     }()
     
@@ -46,7 +45,7 @@ class EventListViewCell: UITableViewCell {
     
 }
 
-extension EventListViewCell: ViewCodable {
+extension EventList: ViewCodable {
     
     func setupViewHierarchy() {
         self.addSubview(titleLabel)

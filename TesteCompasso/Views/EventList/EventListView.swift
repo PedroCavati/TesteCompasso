@@ -13,7 +13,7 @@ class EventListView: UIView {
     lazy var eventTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(EventListViewCell.self, forCellReuseIdentifier: "eventCell")
+        tableView.register(EventList.self, forCellReuseIdentifier: "eventCell")
         tableView.backgroundColor = .systemBackground
         return tableView
     }()
