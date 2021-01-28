@@ -38,11 +38,10 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else { return }
         
         if navigationController.viewControllers.contains(fromViewController) { return }
-        /*
+        
         if let eventDetailViewController = fromViewController as? EventDetailViewController {
             self.childDidFinish(eventDetailViewController.coordinator)
         }
-        */
     }
     
     func childDidFinish(_ child: Coordinator?) {

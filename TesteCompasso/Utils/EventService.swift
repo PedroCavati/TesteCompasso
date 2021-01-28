@@ -27,7 +27,10 @@ class EventService {
                     completion(events, nil)
                 }
             } catch let jsonErr {
-                print("Failed to decode:", jsonErr)
+                DispatchQueue.main.async {
+                    completion(nil, jsonErr)
+                    print("Failed to decode:", jsonErr)
+                }
             }
         }.resume()
         
@@ -51,7 +54,10 @@ class EventService {
                     completion(event, nil)
                 }
             } catch let jsonErr {
-                print("Failed to decode:", jsonErr)
+                DispatchQueue.main.async {
+                    completion(nil, jsonErr)
+                    print("Failed to decode:", jsonErr)
+                }
             }
         }.resume()
         
