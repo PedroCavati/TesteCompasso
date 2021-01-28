@@ -15,7 +15,7 @@ struct EventDetailViewModel {
     let date: String
     let image: String
     let description: String
-    let coordinates: CLLocation
+    let coordinates: CLLocationCoordinate2D
     let attendants: [PeopleViewModel]
     let price: String
     
@@ -34,7 +34,7 @@ struct EventDetailViewModel {
         
         self.description = event.description
         
-        self.coordinates = CLLocation(latitude: event.latitude, longitude: event.longitude)
+        self.coordinates = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
         
         self.attendants = event.people.map({ return PeopleViewModel(people: $0) })
         

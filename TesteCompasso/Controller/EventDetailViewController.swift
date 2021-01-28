@@ -38,6 +38,12 @@ class EventDetailViewController: UIViewController {
         
         detailView.showAttendantsListButton.addTarget(self, action: #selector(showAttendants), for: .touchUpInside)
         
+        detailView.showMapButton.addTarget(self, action: #selector(showEventLocation), for: .touchUpInside)
+        
+        detailView.checkInButton.addTarget(self, action: #selector(checkIn), for: .touchUpInside)
+        
+        detailView.shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+        
         self.view = detailView
     }
     
@@ -78,6 +84,24 @@ extension EventDetailViewController {
     
     @objc func showAttendants() {
         coordinator?.showAttendantsList(peopleList: eventDetailViewModel?.attendants ?? [])
+    }
+    
+    @objc func showEventLocation() {
+        if let eventCoordinates =  eventDetailViewModel?.coordinates {
+            coordinator?.showEventLocation(with: eventCoordinates)
+        }
+    }
+    
+    @objc func checkIn() {
+        coordinator?.showCheckIn(for: eventDetailViewModel?.id ?? "")
+    }
+    
+    @objc func share() {
+        guard let eventTitle = eventDetailViewModel?.title else {
+            return
+        }
+        let vc = UIActivityViewController(activityItems: ["Você está sendo convidado para participar de \(eventTitle)"], applicationActivities: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

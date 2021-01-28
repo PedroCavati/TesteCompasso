@@ -1,5 +1,5 @@
 //
-//  AttendantsViewCoordinator.swift
+//  AttendantsListCoordinator.swift
 //  TesteCompasso
 //
 //  Created by Pedro Henrique Cavalcante de Sousa on 28/01/21.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AttendantsViewCoordinator: Coordinator {
+class AttendantsListCoordinator: Coordinator {
     weak var parentCoordinator: EventDetailCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
@@ -22,10 +22,9 @@ class AttendantsViewCoordinator: Coordinator {
     
     func start() {
         let vc = AttendantsViewController(attendants: attendants)
+        let navController = UINavigationController(rootViewController: vc)
         vc.coordinator = self
-        navigationController.showDetailViewController(vc, sender: self)
+        navigationController.showDetailViewController(navController, sender: self)
     }
-    
-    
     
 }

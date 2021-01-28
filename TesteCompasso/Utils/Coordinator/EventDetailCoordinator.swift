@@ -31,18 +31,24 @@ class EventDetailCoordinator: NSObject, Coordinator, UINavigationControllerDeleg
     }
     
     func showAttendantsList(peopleList: [PeopleViewModel]) {
-        let child = AttendantsViewCoordinator(navigationController: navigationController, with: peopleList)
+        let child = AttendantsListCoordinator(navigationController: navigationController, with: peopleList)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
     }
     
     func showCheckIn(for eventId: String) {
-        
+        let child = CheckInCoordinator(navigationController: navigationController, with: eventId)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
     }
     
-    func showEventLocation(with location: CLLocation) {
-        
+    func showEventLocation(with eventCoordinates: CLLocationCoordinate2D) {
+        let child = EventLocationCoordinator(navigationController: navigationController, with: eventCoordinates)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
     }
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {

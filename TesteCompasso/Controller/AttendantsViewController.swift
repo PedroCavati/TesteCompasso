@@ -17,7 +17,7 @@ class AttendantsViewController: UIViewController {
     private var attendantsViewModels: [PeopleViewModel]
     
     /// View's Coordinator
-    weak var coordinator: AttendantsViewCoordinator?
+    weak var coordinator: AttendantsListCoordinator?
     
     init(attendants: [PeopleViewModel]) {
         self.attendantsViewModels = attendants

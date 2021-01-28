@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90EFB5325C2D38300BF2D9D /* EventLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EFB5225C2D38300BF2D9D /* EventLocationViewController.swift */; };
+		E90EFB5825C2D4AA00BF2D9D /* EventLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EFB5725C2D4AA00BF2D9D /* EventLocationCoordinator.swift */; };
+		E923B1BD25C33D8B009176C6 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E923B1BC25C33D8B009176C6 /* CheckInView.swift */; };
 		E945922625BF557100A8288F /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945922525BF557100A8288F /* EventDetail.swift */; };
 		E945924425BF662F00A8288F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945924325BF662F00A8288F /* Coordinator.swift */; };
 		E945924925BF66C900A8288F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945924825BF66C900A8288F /* MainCoordinator.swift */; };
@@ -15,7 +18,8 @@
 		E974C3A225C28C0400B16BB0 /* AttendantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C3A125C28C0400B16BB0 /* AttendantsView.swift */; };
 		E974C3B025C28C7D00B16BB0 /* AttendantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C3AF25C28C7D00B16BB0 /* AttendantCell.swift */; };
 		E974C3B825C28DFF00B16BB0 /* AttendantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C3B725C28DFF00B16BB0 /* AttendantsViewController.swift */; };
-		E974C3BD25C28FE100B16BB0 /* AttendantsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C3BC25C28FE100B16BB0 /* AttendantsViewCoordinator.swift */; };
+		E974C3BD25C28FE100B16BB0 /* AttendantsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C3BC25C28FE100B16BB0 /* AttendantsListCoordinator.swift */; };
+		E974C3C525C2B3B900B16BB0 /* EventLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C3C425C2B3B900B16BB0 /* EventLocationView.swift */; };
 		E980A53725BCC456006FC8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53625BCC456006FC8A0 /* AppDelegate.swift */; };
 		E980A53925BCC456006FC8A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53825BCC456006FC8A0 /* SceneDelegate.swift */; };
 		E980A53B25BCC456006FC8A0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E980A53A25BCC456006FC8A0 /* EventListViewController.swift */; };
@@ -29,6 +33,8 @@
 		E9975AE525BDC79F00F78BB7 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9975AE425BDC79F00F78BB7 /* EventViewModel.swift */; };
 		E997C3D825C01E0200604F2A /* EventDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997C3D725C01E0200604F2A /* EventDetailCoordinator.swift */; };
 		E9BD160625C0B04A00F820C4 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BD160525C0B04A00F820C4 /* UIImageView + Extension.swift */; };
+		E9D51DE925C340DE0037B465 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D51DE825C340DE0037B465 /* CheckInViewController.swift */; };
+		E9D51DEE25C341340037B465 /* CheckInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D51DED25C341340037B465 /* CheckInCoordinator.swift */; };
 		E9F14A6525BD4929006BC4CD /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A6425BD4929006BC4CD /* EventService.swift */; };
 		E9F14A6A25BD4937006BC4CD /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A6925BD4937006BC4CD /* EventListView.swift */; };
 		E9F14A6F25BD4961006BC4CD /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F14A6E25BD4961006BC4CD /* EventCell.swift */; };
@@ -54,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E90EFB5225C2D38300BF2D9D /* EventLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationViewController.swift; sourceTree = "<group>"; };
+		E90EFB5725C2D4AA00BF2D9D /* EventLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationCoordinator.swift; sourceTree = "<group>"; };
+		E923B1BC25C33D8B009176C6 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		E945922525BF557100A8288F /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
 		E945924325BF662F00A8288F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E945924825BF66C900A8288F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -62,7 +71,8 @@
 		E974C3A125C28C0400B16BB0 /* AttendantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendantsView.swift; sourceTree = "<group>"; };
 		E974C3AF25C28C7D00B16BB0 /* AttendantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendantCell.swift; sourceTree = "<group>"; };
 		E974C3B725C28DFF00B16BB0 /* AttendantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendantsViewController.swift; sourceTree = "<group>"; };
-		E974C3BC25C28FE100B16BB0 /* AttendantsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendantsViewCoordinator.swift; sourceTree = "<group>"; };
+		E974C3BC25C28FE100B16BB0 /* AttendantsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendantsListCoordinator.swift; sourceTree = "<group>"; };
+		E974C3C425C2B3B900B16BB0 /* EventLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationView.swift; sourceTree = "<group>"; };
 		E980A53325BCC455006FC8A0 /* TesteCompasso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteCompasso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E980A53625BCC456006FC8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E980A53825BCC456006FC8A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +92,8 @@
 		E9975AE425BDC79F00F78BB7 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		E997C3D725C01E0200604F2A /* EventDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCoordinator.swift; sourceTree = "<group>"; };
 		E9BD160525C0B04A00F820C4 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		E9D51DE825C340DE0037B465 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		E9D51DED25C341340037B465 /* CheckInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCoordinator.swift; sourceTree = "<group>"; };
 		E9F14A6425BD4929006BC4CD /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		E9F14A6925BD4937006BC4CD /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		E9F14A6E25BD4961006BC4CD /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -123,13 +135,23 @@
 			path = EventList;
 			sourceTree = "<group>";
 		};
+		E923B1C125C33D8E009176C6 /* CheckInView */ = {
+			isa = PBXGroup;
+			children = (
+				E923B1BC25C33D8B009176C6 /* CheckInView.swift */,
+			);
+			path = CheckInView;
+			sourceTree = "<group>";
+		};
 		E945923F25BF63F300A8288F /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				E945924325BF662F00A8288F /* Coordinator.swift */,
 				E945924825BF66C900A8288F /* MainCoordinator.swift */,
 				E997C3D725C01E0200604F2A /* EventDetailCoordinator.swift */,
-				E974C3BC25C28FE100B16BB0 /* AttendantsViewCoordinator.swift */,
+				E974C3BC25C28FE100B16BB0 /* AttendantsListCoordinator.swift */,
+				E90EFB5725C2D4AA00BF2D9D /* EventLocationCoordinator.swift */,
+				E9D51DED25C341340037B465 /* CheckInCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -141,6 +163,14 @@
 				E974C3AF25C28C7D00B16BB0 /* AttendantCell.swift */,
 			);
 			path = AttendantsView;
+			sourceTree = "<group>";
+		};
+		E974C3C925C2B3BC00B16BB0 /* EventLocation */ = {
+			isa = PBXGroup;
+			children = (
+				E974C3C425C2B3B900B16BB0 /* EventLocationView.swift */,
+			);
+			path = EventLocation;
 			sourceTree = "<group>";
 		};
 		E980A52A25BCC455006FC8A0 = {
@@ -215,6 +245,8 @@
 				E905EB6425C036AF00A78456 /* EventList */,
 				E9FF829625C035CA002779F4 /* DetailView */,
 				E974C3A025C28BF400B16BB0 /* AttendantsView */,
+				E974C3C925C2B3BC00B16BB0 /* EventLocation */,
+				E923B1C125C33D8E009176C6 /* CheckInView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +277,8 @@
 				E980A53A25BCC456006FC8A0 /* EventListViewController.swift */,
 				E9FF828825C02532002779F4 /* EventDetailViewController.swift */,
 				E974C3B725C28DFF00B16BB0 /* AttendantsViewController.swift */,
+				E90EFB5225C2D38300BF2D9D /* EventLocationViewController.swift */,
+				E9D51DE825C340DE0037B465 /* CheckInViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -389,25 +423,31 @@
 				E980A57425BCCEF5006FC8A0 /* Event.swift in Sources */,
 				E980A53B25BCC456006FC8A0 /* EventListViewController.swift in Sources */,
 				E945924425BF662F00A8288F /* Coordinator.swift in Sources */,
-				E974C3BD25C28FE100B16BB0 /* AttendantsViewCoordinator.swift in Sources */,
+				E974C3BD25C28FE100B16BB0 /* AttendantsListCoordinator.swift in Sources */,
 				E980A53725BCC456006FC8A0 /* AppDelegate.swift in Sources */,
 				E974C3A225C28C0400B16BB0 /* AttendantsView.swift in Sources */,
+				E9D51DE925C340DE0037B465 /* CheckInViewController.swift in Sources */,
 				E997C3D825C01E0200604F2A /* EventDetailCoordinator.swift in Sources */,
 				E9BD160625C0B04A00F820C4 /* UIImageView + Extension.swift in Sources */,
+				E974C3C525C2B3B900B16BB0 /* EventLocationView.swift in Sources */,
 				E974C3B025C28C7D00B16BB0 /* AttendantCell.swift in Sources */,
 				E9975AE525BDC79F00F78BB7 /* EventViewModel.swift in Sources */,
 				E9F14A7425BD4979006BC4CD /* DetailView.swift in Sources */,
 				E9598C7925C1498C0037CD6D /* EventDetailViewModel.swift in Sources */,
+				E90EFB5325C2D38300BF2D9D /* EventLocationViewController.swift in Sources */,
 				E945922625BF557100A8288F /* EventDetail.swift in Sources */,
 				E968569D25C2412300C7D21F /* PeopleViewModel.swift in Sources */,
 				E980A53925BCC456006FC8A0 /* SceneDelegate.swift in Sources */,
+				E923B1BD25C33D8B009176C6 /* CheckInView.swift in Sources */,
 				E980A57925BCCF42006FC8A0 /* People.swift in Sources */,
 				E980A57E25BCD1A4006FC8A0 /* ViewCodable.swift in Sources */,
 				E9F14A6F25BD4961006BC4CD /* EventCell.swift in Sources */,
 				E9F14A6525BD4929006BC4CD /* EventService.swift in Sources */,
 				E974C3B825C28DFF00B16BB0 /* AttendantsViewController.swift in Sources */,
+				E90EFB5825C2D4AA00BF2D9D /* EventLocationCoordinator.swift in Sources */,
 				E9F14A6A25BD4937006BC4CD /* EventListView.swift in Sources */,
 				E9FF828925C02532002779F4 /* EventDetailViewController.swift in Sources */,
+				E9D51DEE25C341340037B465 /* CheckInCoordinator.swift in Sources */,
 				E945924925BF66C900A8288F /* MainCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
