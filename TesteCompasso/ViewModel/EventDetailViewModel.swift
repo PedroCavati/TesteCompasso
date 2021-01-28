@@ -6,11 +6,18 @@
 //
 
 import Foundation
+import UIKit
+import MapKit
+
 struct EventDetailViewModel {
     let title: String
     let id: String
     let date: String
     let image: String
+    let description: String
+    let coordinates: CLLocation
+    let attendees: [PeopleViewModel]
+    let price: String
     
     init(event: EventDetail) {
         self.title = event.title
@@ -24,6 +31,14 @@ struct EventDetailViewModel {
         self.date = dateFormatter.string(from: dateFromEpochTime)
         
         self.image = event.image
+        
+        self.description = event.description
+        
+        self.coordinates = CLLocation(latitude: event.latitude, longitude: event.longitude)
+        
+        self.attendees = event.people.map({ return PeopleViewModel(people: $0) })
+        
+        self.price = "R$ \(event.price)"
         
     }
 }

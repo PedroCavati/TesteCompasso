@@ -18,9 +18,15 @@ class EventListView: UIView {
         return tableView
     }()
     
+    lazy var tableViewActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.backgroundColor = .systemBackground
         setupViews()
     }
     
@@ -30,11 +36,28 @@ class EventListView: UIView {
     
 }
 
+extension EventListView {
+    
+    func toggleActivityIndicator() {
+        if self.tableViewActivityIndicator.isAnimating {
+            self.tableViewActivityIndicator.isHidden = false
+            self.tableViewActivityIndicator.stopAnimating()
+            self.eventTableView.isHidden = false
+        } else {
+            self.tableViewActivityIndicator.isHidden = false
+            self.tableViewActivityIndicator.startAnimating()
+            self.eventTableView.isHidden = true
+        }
+    }
+    
+}
+
 // MARK:- ViewCodable
 extension EventListView: ViewCodable {
     
     func setupViewHierarchy() {
         self.addSubview(eventTableView)
+        self.addSubview(tableViewActivityIndicator)
     }
     
     func setupConstraints() {
@@ -42,7 +65,10 @@ extension EventListView: ViewCodable {
             eventTableView.topAnchor.constraint(equalTo: self.topAnchor),
             eventTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             eventTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            eventTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
+            eventTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            
+            tableViewActivityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            tableViewActivityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
     

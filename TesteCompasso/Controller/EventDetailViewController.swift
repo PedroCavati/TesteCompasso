@@ -42,7 +42,7 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetch()
+        fetchEventDetail()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -60,7 +60,7 @@ class EventDetailViewController: UIViewController {
 
 extension EventDetailViewController {
     
-    func fetch() {
+    func fetchEventDetail() {
         eventService.fetchEventDetail(for: self.eventId) { [weak self] (eventDetail, err) in
             guard let strongSelf = self else { return }
             if let eventDetail = eventDetail {

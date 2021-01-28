@@ -32,15 +32,15 @@ class EventListViewController: UIViewController {
     
     override func loadView() {
         let eventListView = EventListView(frame: UIScreen.main.bounds)
-                
+        
         eventListView.eventTableView.delegate = self
         eventListView.eventTableView.dataSource = self
-                
+        
         self.view = eventListView
     }
     
     override func viewDidLoad() {
-        fetch()
+        fetchEvents()
         setupNavigationController()
     }
     
@@ -63,18 +63,48 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         self.coordinator?.showEventDetail(for: self.eventViewModels[indexPath.row].id)
     }
-        
+    
 }
 
 extension EventListViewController {
-    func fetch() {
+    
+    func fetchEvents() {
+        self.eventListView.toggleActivityIndicator()
+        
         eventService.fetchEvents { [weak self] (events, err) in
             guard let strongSelf = self else { return }
             if let events = events {
                 strongSelf.eventViewModels = events.map({return EventViewModel(event: $0)})
                 strongSelf.eventListView.eventTableView.reloadData()
+                strongSelf.eventListView.toggleActivityIndicator()
+            } else {
+                strongSelf.eventListView.eventTableView.reloadData()
+                strongSelf.eventListView.toggleActivityIndicator()
+                strongSelf.callAlert()
             }
         }
+    }
+    
+    func callAlert() {
+        let alert = UIAlertController(title: "Erro", message: "Houve uma falha ao tentar recuperar os dados do servidor.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Tentar Novamente", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                self.fetchEvents()
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            @unknown default:
+                fatalError()
+            }
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setupNavigationController() {
