@@ -29,15 +29,15 @@ protocol ViewCodable {
     /**
      Any additional configuration should be set here.
      */
-    func setupAditionalConfiguration()
+    func setupAdditionalConfiguration()
 }
 
 extension ViewCodable {
     func setupViews() {
         setupViewHierarchy()
         setupConstraints()
-        setupAditionalConfiguration()
+        setupAdditionalConfiguration()
     }
     
-    func setupAditionalConfiguration() { }
+    func setupAdditionalConfiguration() { }
 }
